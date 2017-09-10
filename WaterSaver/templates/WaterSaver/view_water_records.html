@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Water Records View</title>
+        <style type="text/css">
+            h1 {
+                font-family: Avenir;
+                text-align: center;
+                color: aqua;
+            }
+            #start {
+                color: darkolivegreen;
+            }
+            #stop {
+                color: burlywood;
+            }
+            #usage {
+                color: cadetblue;
+            }
+            li {
+                margin-top: 20px;
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Below are the last 10 water records</h1>
+        <ul>
+            {% for record in data %}
+                <li>Start Time:  <span id="start"> {{ record.start_time }}  </span>   End Time: <span id="stop">{{ record.stop_time }}</span>     Water Used:   <span id="usage">{{ record.water_flowed }} </span>  L</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
